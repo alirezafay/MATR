@@ -8,7 +8,7 @@ import imageio
 
 import torchvision.transforms as transforms
 
-from Networks.net import MODEL as net
+from net import MODEL as net
 
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 
