@@ -40,9 +40,9 @@ def fusion():
     for num in range(1):
         tic = time.time()
 
-        path1 = '/kaggle/working/MATR/1111_fake_B.png'
+        path1 = '/kaggle/working/MATR/020.gif'
 
-        path2 = '/kaggle/working/MATR/1111.png'
+        path2 = '/kaggle/working/MATR/020_2.gif'
 
         img1 = Image.open(path1).convert('L')
         img2 = Image.open(path2).convert('L')
