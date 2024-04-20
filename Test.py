@@ -17,7 +17,7 @@ device = torch.device('cuda:0')
 
 model = net(in_channel=2)
 
-model_path = "models/model_10.pth"
+model_path = "/kaggle/working/MATR/model_10.pth"
 use_gpu = torch.cuda.is_available()
 
 
