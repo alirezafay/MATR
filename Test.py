@@ -66,7 +66,7 @@ def fusion():
 
         d = np.squeeze(out.detach().cpu().numpy())
         result = (d* 255).astype(np.uint8)
-        imageio.imwrite('./fusion result/{}.bmp'.format(num),
+        imageio.imwrite('/kaggle/working/{}.bmp'.format(num),
                         result)
 
 
