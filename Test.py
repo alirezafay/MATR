@@ -40,9 +40,9 @@ def fusion():
     for num in range(1):
         tic = time.time()
 
-        path1 = './source images/SPECT_001.bmp'
+        path1 = '1039.png'
 
-        path2 = './source images/MRI_001.bmp'
+        path2 = '1039_fake_B.png'
 
         img1 = Image.open(path1).convert('L')
         img2 = Image.open(path2).convert('L')
