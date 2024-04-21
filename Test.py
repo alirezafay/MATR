@@ -72,7 +72,7 @@ def fusion():
 
         d = np.squeeze(out.detach().cpu().numpy())
         result = (d* 255).astype(np.uint8)
-        merged_image = cv2.merge([y, u, v])
+        merged_image = cv2.merge([result, u, v])
         rgb_image = cv2.cvtColor(merged_image, cv2.COLOR_YUV2RGB)
         imageio.imwrite('/kaggle/working/{}.bmp'.format(num),
                         rgb_image)
