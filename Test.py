@@ -2,7 +2,7 @@ from PIL import Image
 import numpy as np
 import os
 import torch
-
+import cv2
 import time
 import imageio
 
@@ -44,14 +44,17 @@ def fusion():
         tic = time.time()
 
         path1 = '/kaggle/working/MATR/PET.bmp'
-
         path2 = '/kaggle/working/MATR/MRI.bmp'
 
-        img1 = Image.open(path1).convert('L')
+        img1 = cv2.imread(path1)
         img2 = Image.open(path2).convert('L')
+        img_rgb = cv2.cvtColor(img1, cv2.COLOR_BGR2RGB)
 
-
-        img1_org = img1
+        yuv_image = cv2.cvtColor(img_rgb, cv2.COLOR_RGB2YUV)
+        y = yuv_image[:,:,0]
+        u = yuv_image[:,:,1]
+        v = yuv_image[:,:,2]
+        img1_org = y
         img2_org = img2
 
         tran = transforms.ToTensor()
@@ -69,8 +72,10 @@ def fusion():
 
         d = np.squeeze(out.detach().cpu().numpy())
         result = (d* 255).astype(np.uint8)
+        merged_image = cv2.merge([y, u, v])
+        rgb_image = cv2.cvtColor(merged_image, cv2.COLOR_YUV2RGB)
         imageio.imwrite('/kaggle/working/{}.bmp'.format(num),
-                        result)
+                        rgb_image)
 
 
         toc = time.time()
