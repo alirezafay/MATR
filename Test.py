@@ -34,15 +34,18 @@ else:
 
     model.load_state_dict(state_dict)
 
-
+path1 = '/kaggle/working/MATR/PET.bmp'
+path2 = '/kaggle/working/MATR/MRI.bmp'
+img1 = Image.open(path1).convert('L')
+img2 = Image.open(path2).convert('L')  
 def fusion():
 
     for num in range(1):
         tic = time.time()
 
-        path1 = '/kaggle/working/MATR/020.gif'
+        path1 = '/kaggle/working/MATR/PET.bmp'
 
-        path2 = '/kaggle/working/MATR/020_2.gif'
+        path2 = '/kaggle/working/MATR/MRI.bmp'
 
         img1 = Image.open(path1).convert('L')
         img2 = Image.open(path2).convert('L')
@@ -72,6 +75,7 @@ def fusion():
 
         toc = time.time()
         print('end  {}{}'.format(num // 10, num % 10), ', time:{}'.format(toc - tic))
+      
 
 
 
