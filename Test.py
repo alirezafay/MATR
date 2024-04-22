@@ -43,7 +43,7 @@ def fusion():
     for num in range(1):
         tic = time.time()
 
-        path1 = '/kaggle/working/MATR/PET.bmp'
+        path1 = '/kaggle/working/MATR/11.png'
         path2 = '/kaggle/working/MATR/MRI.bmp'
 
         img1 = cv2.imread(path1)
