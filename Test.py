@@ -44,7 +44,7 @@ def fusion():
         tic = time.time()
 
         path1 = '/kaggle/working/MATR/11.png'
-        path2 = '/kaggle/working/MATR/MRI.bmp'
+        path2 = '/kaggle/working/MATR/1075 (2).png'
 
         img1 = cv2.imread(path1)
         img2 = Image.open(path2).convert('L')
